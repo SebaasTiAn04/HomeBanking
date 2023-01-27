@@ -4,7 +4,7 @@ let app = createApp({
     data() {
         return{
             
-            url : "http://localhost:8585/api/clients/current",
+            url : "/api/clients/current",
             clientes : [],
             accounts: [],
             accountsExcludingO: [],

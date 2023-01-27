@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data(){
         return {
-            url : "http://localhost:8585/api/clients/current",
+            url : "/api/clients/current",
             client: {},
             json : [],
             cards: [],
@@ -52,7 +52,7 @@ createApp({
         },
 
         getClient(){
-            axios.get("http://localhost:8585/api/clients/current")
+            axios.get("/api/clients/current")
             .then(res => this.client = res.data)
             .catch(exception => console.log(exception))
         },

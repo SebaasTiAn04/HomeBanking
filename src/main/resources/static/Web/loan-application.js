@@ -3,8 +3,8 @@ const { createApp } = Vue
 let app = createApp({
     data() {
         return{ 
-            url : "http://localhost:8585/api/clients/current",
-            urlLoans : "http://localhost:8585/api/loans",
+            url : "/api/clients/current",
+            urlLoans : "/api/loans",
             clientes : [],
             accounts : [],
             accountsActive:[],

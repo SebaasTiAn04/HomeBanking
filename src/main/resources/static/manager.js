@@ -3,8 +3,8 @@ const { createApp } = Vue
 createApp({
     data(){
         return {
-            url : "http://localhost:8585/api/clients",
-            urlLoan: "http://localhost:8585/api/loans",
+            url : "/api/clients",
+            urlLoan: "/api/loans",
             clientes: [],
             json : [],
             lastName: "",
@@ -106,57 +106,10 @@ createApp({
         
         },
         postClient(clientAdd){
-            axios.post("http://localhost:8585/api/clients", clientAdd)
+            axios.post("/api/clients", clientAdd)
             .then(respuesta => this.loadData())
             .catch(exception => console.log(exception))
         },
-
-        clientDelete(client){
-            console.log(client)
-
- /*            if(client.accountsDTO.length != 0){
-
-                 console.log(client.accountsDTO)
-
-                client.accountsDTO.forEach(account =>{
-
-                    if(account.transactionDTO.length != 0){
-
-                        account.transactionDTO.forEach(transaction =>{
-
-                            let transactionDelete =  "http://localhost:8585/rest/accounts/transactions/" + transaction.id
-
-                            axios.delete(transactionDelete)
-                            .then(res => this.loadData())
-                            .catch(exception => console.log(exception))
-
-                        });
-
-                    }
-
-                    let accountDelete =  "http://localhost:8585/rest/accounts/" + account.id
-                    axios.delete(accountDelete)
-                    .then(res => this.loadData())
-                    .catch(exception => console.log(exception))
-                });
-            }
-
-            if(client.clientLoans.length != 0){
-                client.clientLoans.forEach(ele =>{
-                    let loansDelete = "http://localhost:8585/rest/clients/clientLoans/" + ele.id
-
-                    axios.delete(loansDelete)
-                    .then(res => this.loadData())
-                    .catch(exception => console.log(exception))
-                })
-            } */
-
-            let clientDelete ="http://localhost:8585/rest/clients/" + client.id 
-            axios.delete(clientDelete)
-            .then(res => this.loadData())
-            .catch(exception => console.log(exception))
-
-        }
     },
     computed:{
     }

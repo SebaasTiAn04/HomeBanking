@@ -28,7 +28,7 @@ createApp({
             const params = new URLSearchParams(queryString);
             const id = params.get("id");
 
-            axios.get( "http://localhost:8585/api/accounts/" + id)
+            axios.get( "/api/accounts/" + id)
             .then((respuesta) =>{
                 this.json = respuesta
                 this.account = respuesta.data
