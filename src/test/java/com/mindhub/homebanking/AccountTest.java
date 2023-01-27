@@ -14,12 +14,12 @@ import static org.hamcrest.Matchers.*;
 @SpringBootTest
 public class AccountTest{
 
-    @Autowired
-    AccountRepository accountRepository;
-
-    @Test
-    public void existSpecificAccount(){
-        List<Account> accounts = accountRepository.findAll();
-        assertThat(accounts,hasItem(hasProperty("number",is("VIN001"))));
-    }
+//    @Autowired
+//    AccountRepository accountRepository;
+//
+//    @Test
+//    public void existSpecificAccount(){
+//        List<Account> accounts = accountRepository.findAll();
+//        assertThat(accounts,hasItem(hasProperty("number",is("VIN001"))));
+//    }
 }

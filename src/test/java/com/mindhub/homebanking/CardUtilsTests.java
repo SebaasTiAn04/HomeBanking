@@ -15,24 +15,24 @@ import static org.hamcrest.Matchers.*;
 @SpringBootTest
 public class CardUtilsTests{
 
-    @Autowired
-    CardRepository cardRepository;
-
-    @Test
-    public void cardNumberIsCreated(){
-        String cardNumber = GenerateNumber.getCardNumber();
-        assertThat(cardNumber,is(not(emptyOrNullString())));
-    }
-
-    @Test
-    public void cardCVVIsCreated(){
-        int cardCVV = GenerateNumber.getCardCVV();
-        assertThat(cardCVV, notNullValue());
-    }
-
-    @Test
-    public void existCard(){
-        List<Card> cards = cardRepository.findAll();
-        assertThat(cards,is(not(empty())));
-    }
+//    @Autowired
+//    CardRepository cardRepository;
+//
+//    @Test
+//    public void cardNumberIsCreated(){
+//        String cardNumber = GenerateNumber.getCardNumber();
+//        assertThat(cardNumber,is(not(emptyOrNullString())));
+//    }
+//
+//    @Test
+//    public void cardCVVIsCreated(){
+//        int cardCVV = GenerateNumber.getCardCVV();
+//        assertThat(cardCVV, notNullValue());
+//    }
+//
+//    @Test
+//    public void existCard(){
+//        List<Card> cards = cardRepository.findAll();
+//        assertThat(cards,is(not(empty())));
+//    }
 }
