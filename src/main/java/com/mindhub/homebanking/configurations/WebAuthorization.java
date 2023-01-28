@@ -24,11 +24,11 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/api/loans","/api/clients/current/accounts",
                         "/api/clients/current/cards", "/api/transactions", "/api/pdf/generate").hasAuthority("CLIENT")
                 .antMatchers("/rest/**", "/api/**", "/h2-console/**", "/manager.html", "/manager.js" ).hasAuthority("ADMIN")
-                .antMatchers("/web/accounts.html", "/web/accounts.js","/web/account.html",
-                             "/web/account.js", "/web/cards.html","/web/cards.js", "/web/transfers.html", "/web/transfers.js",
-                             "/web/loan-application.html","/web/loan-application.js" , "/web/products.html", "/web/products.js").hasAuthority("CLIENT")
-                .antMatchers(  "/web/login.html", "/web/login.js", "/web/signin.html", "/web/signin.js","/web/index.html" ,
-                        "/web/index.js" , "/web/css/style.css","/web/img/**","/api/**","/api/clients" ).permitAll()
+                .antMatchers("/Web/accounts.html", "/Web/accounts.js","/Web/account.html",
+                             "/Web/account.js", "/Web/cards.html","/Web/cards.js", "/Web/transfers.html", "/Web/transfers.js",
+                             "/Web/loan-application.html","/Web/loan-application.js" , "/Web/products.html", "/Web/products.js").hasAuthority("CLIENT")
+                .antMatchers(  "/Web/login.html", "/Web/login.js", "/Web/signin.html", "/Web/signin.js","/Web/index.html" ,
+                        "/Web/index.js" , "/Web/css/style.css","/Web/img/**","/api/**","/api/clients" ).permitAll()
                 .anyRequest().denyAll();
 
         http.formLogin()
