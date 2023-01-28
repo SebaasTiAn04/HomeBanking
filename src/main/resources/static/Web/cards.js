@@ -58,7 +58,7 @@ createApp({
         },
         logOut(){
             return axios.post('/api/logout')
-            .then(response=> window.location.href = "http://localhost:8585/web/index.html")
+            .then(response=> window.location.href = "/Web/index.html")
         },
         addCard(){
             axios.post('/api/clients/current/cards',`type=${this.type}&color=${this.color}`)
@@ -70,7 +70,7 @@ createApp({
                     showConfirmButton: false,
                     timer: 1500
                   })
-                  window.location.href = "http://localhost:8585/web/cards.html"
+                  window.location.href = "/Web/cards.html"
             })
             .catch((exception)=>{
                     Swal.fire({
@@ -82,7 +82,7 @@ createApp({
         },
         deleteCard(){
             axios.patch('/api/clients/current/cards/delete',`number=${this.cardNumberDelete}`)
-            .then(response => window.location.href = "http://localhost:8585/web/cards.html")
+            .then(response => window.location.href = "/Web/cards.html")
             .catch((exception)=>  console.log(exception))
         },
     },

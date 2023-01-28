@@ -32,9 +32,9 @@ createApp({
             axios.post('/api/login',`email=${this.email}&password=${this.password}`)
             .then((response) =>{
                 if(this.email == "admin@gmail.com"){
-                    window.location.href = "http://localhost:8585/manager.html"
+                    window.location.href = "/manager.html"
                 }else{
-                    window.location.href = "http://localhost:8585/web/products.html"
+                    window.location.href = "/Web/products.html"
                 }
                 
             })

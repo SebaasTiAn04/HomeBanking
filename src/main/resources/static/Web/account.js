@@ -46,7 +46,7 @@ createApp({
         },
         logOut(){
             return axios.post('/api/logout')
-            .then(response=> window.location.href = "/web/index.html")
+            .then(response=> window.location.href = "/Web/index.html")
         },
         dowloandPdf(){
             let TransactionDateDTO = {

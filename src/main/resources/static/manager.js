@@ -50,7 +50,7 @@ createApp({
         },
         logOut(){
             return axios.post('/api/logout')
-            .then(response=> window.location.href = "http://localhost:8585/web/index.html")
+            .then(response=> window.location.href = "/Web/index.html")
         },
         addLoan(){
             if(this.pymes1 !== 0){

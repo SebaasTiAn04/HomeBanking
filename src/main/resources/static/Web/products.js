@@ -38,7 +38,7 @@ createApp({
         },
         logOut(){
             axios.post('/api/logout')
-            .then(response=> window.location.href = "http://localhost:8585/web/index.html")
+            .then(response=> window.location.href = "/Web/index.html")
         },
         addAccount(){
             axios.post('/api/clients/current/accounts',`type=${this.type}`)
@@ -46,7 +46,7 @@ createApp({
                 icon: 'success',
                 text: 'the account was created successfully',
               })
-              window.location.href = "http://localhost:8585/web/products.html"
+              window.location.href = "/Web/products.html"
             })
             .catch((exception)=>{
                     Swal.fire({
@@ -64,7 +64,7 @@ createApp({
                     icon: 'success',
                     text: 'the account was created successfully',
                   })
-                  window.location.href = "http://localhost:8585/web/products.html"
+                  window.location.href = "/Web/products.html"
             })
             .catch(exception => {
                 Swal.fire({
