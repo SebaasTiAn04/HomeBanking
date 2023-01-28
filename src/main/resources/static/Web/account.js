@@ -40,13 +40,13 @@ createApp({
             .catch( exception => console.log(exception)) 
         },
         getClient(){
-            axios.get("http://localhost:8585/api/clients/current")
+            axios.get("/api/clients/current")
             .then(res => this.client = res.data)
             .catch(exception => console.log(exception))
         },
         logOut(){
             return axios.post('/api/logout')
-            .then(response=> window.location.href = "http://localhost:8585/web/index.html")
+            .then(response=> window.location.href = "/web/index.html")
         },
         dowloandPdf(){
             let TransactionDateDTO = {

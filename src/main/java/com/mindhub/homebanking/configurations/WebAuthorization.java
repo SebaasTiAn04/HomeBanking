@@ -27,8 +27,8 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers("/web/accounts.html", "/web/accounts.js","/web/account.html",
                              "/web/account.js", "/web/cards.html","/web/cards.js", "/web/transfers.html", "/web/transfers.js",
                              "/web/loan-application.html","/web/loan-application.js" , "/web/products.html", "/web/products.js").hasAuthority("CLIENT")
-                .antMatchers(  "/web/login.html", "/web/login.js", "/web/signin.html", "/web/signin.js","/web/index.html" ,
-                        "/web/index.js" , "/web/css/style.css","/web/img/**","/api/**","/api/clients" ).permitAll()
+                .antMatchers(  "/login.html", "/login.js", "/signin.html", "/web/signin.js","/index.html" ,
+                        "/index.js" , "/css/style.css","/web/img/**","/api/**","/api/clients" ).permitAll()
                 .anyRequest().denyAll();
 
         http.formLogin()
