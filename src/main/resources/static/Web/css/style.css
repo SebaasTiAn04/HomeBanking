@@ -6,6 +6,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 
 #danger{
@@ -718,6 +719,11 @@ header h1 {
   text-align: center;
 }
 
+.icons{
+  display: flex;
+  align-items: center;
+}
+
 .icons > svg {
   transform: rotate(85deg);
 }
@@ -897,6 +903,10 @@ footer {
     gap: 1rem;
   }
 
+  .card-body{
+    width: 10rem;
+  }
+
   .container-accordion {
     width: 60%;
   }
@@ -923,6 +933,10 @@ footer {
 
   .card-index{
     width: 20rem;
+  }
+
+  .card-seguros{
+    justify-content: center;
   }
 }
 
