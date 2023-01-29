@@ -38,7 +38,7 @@ createApp({
         },
         logOut(){
             axios.post('/api/logout')
-            .then(response=> window.location.href = "/web/index.html")
+            .then(response=> window.location.href = "/Web/index.html")
         },
         addAccount(){
             axios.post('/api/clients/current/accounts',`type=${this.type}`)
