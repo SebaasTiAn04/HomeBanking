@@ -33,6 +33,10 @@ let app = createApp({
             })
             .catch((exception) => console.log(exception))
         },
+        logOut(){
+            axios.post('/api/logout')
+            .then(response=> window.location.href = "/Web/index.html")
+        },
         loadDataLoan(){
             axios.get(this.urlLoans)
             .then((data) => {

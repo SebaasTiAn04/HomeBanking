@@ -39,7 +39,7 @@ let app = createApp({
                 text: 'The transaction was a success',
                
               })
-              window.location.href = "/web/products.html"
+              window.location.href = "/Web/products.html"
             }).catch((exception) => {Swal.fire({
                 icon: 'error',
                 text: 'Sorry, ' +exception.response.data,
