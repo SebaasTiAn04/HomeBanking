@@ -504,7 +504,6 @@ header h1 {
 }
 
 .active:hover {
-  color: rgb(163, 163, 163) !important;
   transition: 0.5s;
 }
 
@@ -895,6 +894,10 @@ footer {
 }
 
 @media screen and (max-width: 1150px) {
+
+  .container{
+    width: 100% !important;
+  }
   .container-acounts-main {
     display: flex;
     flex-wrap: wrap;
