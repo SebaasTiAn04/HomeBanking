@@ -62,6 +62,7 @@ let app = createApp({
                     text: 'The transaction was a success',
                 })
                     this.paymentSelected = null;  
+                    this.loadData()
             })
             .catch((exception)=> {Swal.fire({
                 icon: 'error',  

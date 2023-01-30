@@ -140,66 +140,69 @@
                     
                 </div>
 
-                <div class="me-5 ms-5 border border-0 d-flex justify-content-center flex-column my-5">
-                    <h2 class="text-center my-1">Apply for Loan</h2>
-                    <h4 class="text-center">Which Loan would you like to apply for?</h4>
-                     <form class="d-flex justify-content-center">
-                        <div class="radio-group p-0" v-for="loan of loans">
-                            <input type="radio" v-model="selectLoanId" :value="loan.id" :id="loan.id" name="selector">
-                            <label :for="loan.id" class="form1">{{loan.name}} </label>
-                        </div>
-                    </form>
-                    
-                    <h5 class="text-center" >Select Payment</h5>
-                    <form class="d-flex justify-content-center pb-3">
-                        <select class="form-select d-flex justify-content-center  transferInputs"  v-model="selectPayment" v-for="loan of loanSelected"   style="width: 15rem;" aria-label="Default select example"> 
-                           
-                            <option class="pb-3" selected disabled >Select Payment:</option>
-                            <template v-for="payment of loan.payments" >
-                                <option :value="payment">{{payment}}</option>
-                            </template>
-                        </select>
-                        
-                    </form>
-                    <div>
-                        <p class="text-center" v-for="loan of loanSelected">
-                            <span class="fw-bold">interest percentage of the loan:</span> {{loan.percentageInterest}}%
-                        </p>
-                    </div>
-                    <div>
-                        <p class="text-center" v-for="loan of loanSelected">
-                            <span class="fw-bold">Max Amount:</span> ${{loan.maxAmount}}
-                        </p>
-                    </div>
-                    
-                    <div class="d-flex justify-content-center pb-3">
-                        <div class="transferInputs">
-                            <label for="amount" class="form-label d-flex justify-content-center">Amount:</label>
-                            <input type="amount" class="form-control " style="width: 15rem;" placeholder="ex. 10000" v-model="amount" id="amount">
-                        </div>
-                        <div>
-                            
-                        </div>
-                    </div>
-                    <p class="text-center" >
-                        <span class="fw-bold">Total to pay:</span> {{totalAmount}} 
-                    </p>
-                    <div>
-                        <h5 class="text-center">Select Account</h5>
-                        <form  class="d-flex justify-content-center ">
-                            <div class="radio-group p-0"  v-for="account of accountsActive">
-                                <input type="radio" v-model="selectAccount" :value="account.number" :id="account.number" name="selector">
-                                <label :for="account.number" class="form1">{{account.number}} </label>
-                           </div>
-                           
+                <div class="col-8 container-acounts d-flex justify-content-end flex-column align-items-center">
+                    <div class=" border border-0 d-flex justify-content-center flex-column my-5">
+                        <h2 class="text-center my-1">Apply for Loan</h2>
+                        <h4 class="text-center">Which Loan would you like to apply for?</h4>
+                         <form class="d-flex justify-content-center">
+                            <div class="radio-group p-0" v-for="loan of loans">
+                                <input type="radio" v-model="selectLoanId" :value="loan.id" :id="loan.id" name="selector">
+                                <label :for="loan.id" class="form1">{{loan.name}} </label>
+                            </div>
                         </form>
                         
-                    </div>
-                    
-                        <div v-if="selectAccount != null" class="d-flex justify-content-center p-3">
-                            <button class="btn border rounded"  v-on:click="surePopUp()" >Apply</button>
+                        <h5 class="text-center" >Select Payment</h5>
+                        <form class="d-flex justify-content-center pb-3">
+                            <select class="form-select d-flex justify-content-center  transferInputs"  v-model="selectPayment" v-for="loan of loanSelected"   style="width: 15rem;" aria-label="Default select example"> 
+                               
+                                <option class="pb-3" selected disabled >Select Payment:</option>
+                                <template v-for="payment of loan.payments" >
+                                    <option :value="payment">{{payment}}</option>
+                                </template>
+                            </select>
+                            
+                        </form>
+                        <div>
+                            <p class="text-center" v-for="loan of loanSelected">
+                                <span class="fw-bold">interest percentage of the loan:</span> {{loan.percentageInterest}}%
+                            </p>
                         </div>
+                        <div>
+                            <p class="text-center" v-for="loan of loanSelected">
+                                <span class="fw-bold">Max Amount:</span> ${{loan.maxAmount}}
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center pb-3">
+                            <div class="transferInputs">
+                                <label for="amount" class="form-label d-flex justify-content-center">Amount:</label>
+                                <input type="amount" class="form-control " style="width: 15rem;" placeholder="ex. 10000" v-model="amount" id="amount">
+                            </div>
+                            <div>
+                                
+                            </div>
+                        </div>
+                        <p class="text-center" >
+                            <span class="fw-bold">Total to pay:</span> {{totalAmount}} 
+                        </p>
+                        <div>
+                            <h5 class="text-center">Select Account</h5>
+                            <form  class="d-flex justify-content-center ">
+                                <div class="radio-group p-0"  v-for="account of accountsActive">
+                                    <input type="radio" v-model="selectAccount" :value="account.number" :id="account.number" name="selector">
+                                    <label :for="account.number" class="form1">{{account.number}} </label>
+                               </div>
+                               
+                            </form>
+                            
+                        </div>
+                        
+                            <div v-if="selectAccount != null" class="d-flex justify-content-center p-3">
+                                <button class="btn border rounded"  v-on:click="surePopUp()" >Apply</button>
+                            </div>
+                    </div>
                 </div>
+               
             </div>
 
             
