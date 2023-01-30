@@ -5,6 +5,7 @@ let app = createApp({
         return{ 
             url : "/api/clients/current",
             urlLoans : "/api/loans",
+            client: {},
             clientes : [],
             accounts : [],
             accountsActive:[],
@@ -29,6 +30,7 @@ let app = createApp({
             axios.get(this.url)
             .then((data) => {
                 this.clientes = data.data
+                this.client = data.data
                 this.accounts = this.clientes.accountsDTO
             })
             .catch((exception) => console.log(exception))
