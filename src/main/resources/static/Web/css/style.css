@@ -895,9 +895,6 @@ footer {
 
 @media screen and (max-width: 1150px) {
 
-  .container{
-    width: 100% !important;
-  }
   .container-acounts-main {
     display: flex;
     flex-wrap: wrap;

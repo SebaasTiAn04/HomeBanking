@@ -157,7 +157,7 @@
             <div class="collapse bgColor3 mb-3 " id="collapseExample2">
               <div class="card card-body bgColor3">
                   <h4 class="text-center textColor2">Select the card to delete</h4>
-                  <form class="d-flex flex-column justify-content-center container ">
+                  <form class="d-flex flex-column justify-content-center ">
                       <div class=" radio-group d-flex p-0" v-for="card of cardsActive">
                             <input type="radio" v-model="cardNumberDelete" :value="card.number" :id="card.number" name="selector">
                             <label :for="card.number" class="form1">{{card.number}}</label>
