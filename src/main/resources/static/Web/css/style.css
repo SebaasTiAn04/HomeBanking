@@ -495,7 +495,7 @@ header h1 {
 }
 
 .active {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(244, 244, 244);
   border-radius: 10px;
   padding: 10px;
   margin: 0 !important;
@@ -506,7 +506,6 @@ header h1 {
 .active:hover {
   color: rgb(163, 163, 163) !important;
   transition: 0.5s;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .navbar {
@@ -681,8 +680,8 @@ header h1 {
 
 .cardsDiv {
   border-radius: 10px;
-  width: 34rem;
-/*   background-image: url(../img/map.png); */
+  width: 30rem;
+  height: auto;
   background-position: center;
   background-size: cover;
   padding: 1rem;
@@ -690,7 +689,8 @@ header h1 {
 
 .cardsDivBack {
   border-radius: 10px;
-  width: 34rem;
+  width: 30rem;
+  height: auto;
   min-height: 18rem;
   background-position: center;
   background-size: cover;
@@ -1000,6 +1000,7 @@ footer {
 
   .cardsDiv {
     width: 20rem;
+    height: 13rem;
   }
 
   .cardsDiv p {
@@ -1007,7 +1008,7 @@ footer {
   }
   .cardsDivBack{
     width: 20rem;
-    min-height: 13rem;
+    height: 13rem;
   }
 
   .card-font {
