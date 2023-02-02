@@ -120,7 +120,7 @@ public class HomeBankingApplication {
 
 
 			Card card1 = new Card(CardType.DEBIT, "2232-4322-4443", CardColor.GOLD, melba.getFirstName() + " " + melba.getLastName(), 990, LocalDate.now(), LocalDate.now().plusYears(5), true);
-			Card card2 = new Card(CardType.CREDIT, "2234-6745-552-7888", CardColor.TITANIUM, melba.getFirstName() + " " + melba.getLastName(), 750, LocalDate.now(), LocalDate.now().plusYears(5), true);
+			Card card2 = new Card(CardType.CREDIT, "2234-6745-5523", CardColor.TITANIUM, melba.getFirstName() + " " + melba.getLastName(), 750, LocalDate.now(), LocalDate.now().plusYears(5), true);
 
 			melba.addCard(card1);
 			melba.addCard(card2);
