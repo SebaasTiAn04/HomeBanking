@@ -182,58 +182,7 @@
                           </div>
                         </div>
                                                 
-                        <!-- Modal create -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Create Account</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                <h4>Select Type</h4>
-                                <form>
-                                  <div class="radio-group">
-                                    <input type="radio" v-model="type" value="CHECKING" id="option-one-type" name="selector">
-                                    <label for="option-one-type" class="form1">Checking</label>
-                                    <input type="radio" v-model="type" value="SAVINGS" id="option-two-type" name="selector">
-                                    <label for="option-two-type" class="form1">Savings</label>
-                                  </div>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary"  @click="addAccount()">Apply</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Modal Delete-->
-                        <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                          <div class="modal-dialog ">
-                            <div class="modal-content col-4">
-                              <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Select Account</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                <div class=" radio-group d-flex align-items-center p-0" v-for="account of accountsActive">
-                                  <input type="radio" v-model="accountNumberD" :value="account.number" :id="account.number" name="selector">
-                                  <label :for="account.number" class="form1 col-12">{{account.number}}</label>
-                                  
-                                </div>
-                                
-                              </div>
-                              <div class="mx-3">
-                                <button class="btn btn-danger " @click="deleteAccount()">Delete</button>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                       
 
 
 
@@ -261,7 +210,58 @@
                     </section>
                 </div>
 
-                
+                 <!-- Modal create -->
+                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Create Account</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <h4>Select Type</h4>
+                        <form>
+                          <div class="radio-group">
+                            <input type="radio" v-model="type" value="CHECKING" id="option-one-type" name="selector">
+                            <label for="option-one-type" class="form1">Checking</label>
+                            <input type="radio" v-model="type" value="SAVINGS" id="option-two-type" name="selector">
+                            <label for="option-two-type" class="form1">Savings</label>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"  @click="addAccount()">Apply</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal Delete-->
+                <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog ">
+                    <div class="modal-content col-4">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Select Account</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class=" radio-group d-flex align-items-center p-0" v-for="account of accountsActive">
+                          <input type="radio" v-model="accountNumberD" :value="account.number" :id="account.number" name="selector">
+                          <label :for="account.number" class="form1 col-12">{{account.number}}</label>
+                          
+                        </div>
+                        
+                      </div>
+                      <div class="mx-3">
+                        <button class="btn btn-danger " @click="deleteAccount()">Delete</button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="container-acordion-prestamo ">
                   <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -293,13 +293,7 @@
                     <img src="./img/Publicidad.png" alt="Imagen de publicidad">
                   </div>
                 </div>
-                
-<!--                 <div class="col-11 acciones" data-aos="fade-up">
-                  <iframe src="https://es.widgets.investing.com/live-currency-cross-rates?theme=darkTheme"
-                   width="100%" height="100%" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Cortesía de <a href="https://es.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link"
-                     target="_blank" rel="nofollow">Investing.com</a></div>
-                </div>
- -->
+              
               </div>
           </div>
 

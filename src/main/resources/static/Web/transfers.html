@@ -18,6 +18,7 @@
 <body>
     <div id="app">
         {{selectedAccount}}
+        {{filterAccountActive}}
         <header>
             <div>
                 <h1> Buenos Aires Bank</h1>
@@ -46,7 +47,7 @@
                        </div>
                     </form>
                     <h5 class="text-center">Select Account</h5>
-                    <form class="d-flex justify-content-center">
+                    <form class="d-flex justify-content-center gap-4 flex-column align-items-center">
                         <div class="radio-group p-0" v-for="account of accounts">
                              <input type="radio" v-model="selectAccount" :value="account.number" :id="account.number" name="selector">
                              <label :for="account.number" class="form1">{{account.number}} <span class="fw-bold">Balance:</span>  {{account.balance}}</label>                          
@@ -79,7 +80,7 @@
                         <select class="form-select d-flex justify-content-center " v-model="accountThirdD" style="width: 20rem;" aria-label="Default select example">    
 
                             <option disabled selected value="" class="pb-3">SELECT THE ACCOUNT TO TRANSFER:</option>
-                            <template  v-for="account in accountsExcludingO">
+                            <template  v-for="account in accountsActive">
                                 <option :value="account.number">{{account.number}} Balance: {{account.balance}}</option>
                             </template>
                         </select>
@@ -101,7 +102,7 @@
                         </div>
                     </div>
                     <div class="d-flex col-12 justify-content-center my-2 ">
-                        <a href="./accounts.html" ><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">return</button></a> 
+                        <a href="./accounts.html" ><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Return</button></a> 
                     </div>
 
                 </div>

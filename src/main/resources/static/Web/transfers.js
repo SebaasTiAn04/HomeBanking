@@ -68,7 +68,10 @@ let app = createApp({
     computed:{
         selectedAccount(){
             this.accountsExcludingO = this.accounts.filter(account => account.number != this.selectAccount)
-          }
+          },
+          filterAccountActive(){
+            this.accountsActive = this.accounts.filter(account => account.active === true)
+        }
     },
     
 }).mount('#app');
