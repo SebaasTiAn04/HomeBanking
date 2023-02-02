@@ -48,7 +48,7 @@
                     </form>
                     <h5 class="text-center">Select Account</h5>
                     <form class="d-flex justify-content-center gap-4 flex-column align-items-center">
-                        <div class="radio-group p-0" v-for="account of accounts">
+                        <div class="radio-group p-0" v-for="account of accountsActive">
                              <input type="radio" v-model="selectAccount" :value="account.number" :id="account.number" name="selector">
                              <label :for="account.number" class="form1">{{account.number}} <span class="fw-bold">Balance:</span>  {{account.balance}}</label>                          
                         </div>
