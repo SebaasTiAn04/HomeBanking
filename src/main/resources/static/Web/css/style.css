@@ -391,6 +391,89 @@ main {
   gap: 2rem;
 }
 
+
+/* Hamburger-menu-mobile */
+
+.hamburger-menu{
+  display: none;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  color: #1464a5;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #CFD8DC;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 10;
+  left: -100%;
+  width: 300px;
+  height: 90%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #ECEFF1;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* menu-nav */
 .main-menu {
   width: 100%;
   display: flex;
@@ -407,7 +490,6 @@ main {
   padding-left: 0;
   margin-left: 0;
 }
-
 ol a {
   transition: 0.4s;
   text-decoration: none;
@@ -446,8 +528,7 @@ svg {
 }
 
 #active {
-  color: rgb(7, 33, 70);
-  font-weight: 500;
+  text-decoration: underline;
 }
 
 ol a:hover {
@@ -469,6 +550,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 3;
+  box-shadow: rgba(88, 88, 88, 0.3) 0px 19px 38px;
 }
 
 label{
@@ -480,6 +562,11 @@ header h1 {
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   
+}
+
+hr{
+  margin-top: 3rem ;
+  margin-bottom: 3rem ;
 }
 
 /* main */
@@ -585,7 +672,7 @@ header h1 {
 }
 
 .exit-sesion {
-  background-color: rgb(20, 100, 165);
+  background-color: #1464a5;
   padding: 0.8rem;
 }
 
@@ -680,7 +767,7 @@ header h1 {
 .cardsDiv {
   border-radius: 10px;
   width: 30rem;
-  height: auto;
+  height: 17rem;
   background-position: center;
   background-size: cover;
   padding: 1rem;
@@ -689,8 +776,7 @@ header h1 {
 .cardsDivBack {
   border-radius: 10px;
   width: 30rem;
-  height: auto;
-  min-height: 18rem;
+  height: 17rem;
   background-position: center;
   background-size: cover;
 }
@@ -746,6 +832,7 @@ header h1 {
 
 #colorWhite {
   color: white;
+  margin: 0;
 }
 
 #logOut{
@@ -886,6 +973,18 @@ footer {
   flex-wrap: wrap;
 }
 
+.promocion-mobile{
+  display: none;
+}
+
+.transaction-mobile{
+  display: none;
+}
+
+.transaction-description{
+  display: flex;
+  flex-wrap: wrap;
+}
 @media screen and (max-width: 1450px) {
 
   .card-index{
@@ -932,7 +1031,13 @@ footer {
   }
 
   .card-index{
-    width: 20rem;
+    width: 25rem;
+  }
+
+  .container-public{
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
   }
 
   .card-seguros{
@@ -953,27 +1058,41 @@ footer {
     width: 80%;
   }
 
-  .card-index{
-    width: 15rem;
+
+
+  .carrusel-index{
+    display: none !important;
   }
 
-  .container-public{
-    flex-direction: column !important;
-    align-items: center;
-    justify-content: center;
+  .promocion-mobile{
+    display: block;
+    position: relative;
+  }
+
+  .table{
+    display: none !important; 
+  }
+
+  .transaction-mobile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .transaction-description{
+    flex-direction: column;
+  }
+
+  .hamburger-menu{
+    display: block;
+  }
+
+  .main-menu{
+    display: none;
   }
 
 }
 @media screen and (max-width: 570px) {
-  .main-menu > ol {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-    margin-left: 0;
-  }
 
   #seguros{
     width: 15rem;
@@ -1016,11 +1135,11 @@ footer {
   }
 
   .cardsDivBack p {
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 
   .cardsDivBack span {
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 
   .banner {
@@ -1049,5 +1168,8 @@ footer {
   }
   .icons > img, svg {
     width: 20px;
+  }
+  .card-index{
+    width: 20rem;
   }
 }

@@ -34,7 +34,7 @@ createApp({
                 if(this.email == "admin@gmail.com"){
                     window.location.href = "/manager.html"
                 }else{
-                    window.location.href = "/Web/products.html"
+                    window.location.href = "/web/products.html"
                 }
                 
             })

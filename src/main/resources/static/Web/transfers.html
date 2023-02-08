@@ -20,17 +20,34 @@
         {{selectedAccount}}
         {{filterAccountActive}}
         <header>
-            <div>
-                <h1> Buenos Aires Bank</h1>
-            </div>
+            <div class="justify-content-center d-flex align-items-center p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="36" fill="currentColor" class="bi bi-bank " style="color: white;" viewBox="0 0 16 16">
+                  <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                </svg>
+                  <h1 class="m-0"> Buenos Aires Bank</h1>
+              </div>
             <nav class="main-menu">
                 <ol data-aos="fade-left">
-                    <a href="./products.html" id="active"><li>My products</li></a> 
+                    <a href="./products.html"><li>My products</li></a> 
                     <a href="./accounts.html"><li>Accounts</li></a> 
                     <a href="./cards.html" ><li>Cards</li></a> 
                     <a href="./loan-application.html" ><li>Loans</li></a> 
                 </ol>
             </nav>
+            <!-- Nav-mobile -->
+              <div class="hamburger-menu">
+                 <input id="menu__toggle" type="checkbox" />
+                 <label class="menu__btn" for="menu__toggle">
+                      <span></span>
+                  </label>
+                          
+                <ul class="menu__box">
+                    <li><a class="menu__item" href="./products.html">My products</a></li>
+                    <li><a class="menu__item" href="./accounts.html" >Accounts</a></li>
+                    <li><a class="menu__item" href="./cards.html" >Cards</a></li>
+                    <li><a class="menu__item" href="./loan-application.html">Loans</a></li>
+                </ul>
+              </div>
         </header>
         <main>
             <div class="container-acounts-main ">
@@ -47,7 +64,7 @@
                        </div>
                     </form>
                     <h5 class="text-center">Select Account</h5>
-                    <form class="d-flex justify-content-center gap-4 flex-column align-items-center">
+                    <form class="d-flex justify-content-center">
                         <div class="radio-group p-0" v-for="account of accountsActive">
                              <input type="radio" v-model="selectAccount" :value="account.number" :id="account.number" name="selector">
                              <label :for="account.number" class="form1">{{account.number}} <span class="fw-bold">Balance:</span>  {{account.balance}}</label>                          
@@ -80,7 +97,7 @@
                         <select class="form-select d-flex justify-content-center " v-model="accountThirdD" style="width: 20rem;" aria-label="Default select example">    
 
                             <option disabled selected value="" class="pb-3">SELECT THE ACCOUNT TO TRANSFER:</option>
-                            <template  v-for="account in accountsActive">
+                            <template  v-for="account in accountsExcludingO">
                                 <option :value="account.number">{{account.number}} Balance: {{account.balance}}</option>
                             </template>
                         </select>
